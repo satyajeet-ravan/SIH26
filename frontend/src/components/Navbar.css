@@ -44,8 +44,8 @@
   display: flex;
   align-items: center;
   gap: 40px;
+  margin-right: 30px; /* new */
 }
-
 .nav-links a {
   height: 100%;
   display: flex;
@@ -249,6 +249,12 @@ html {
 .language-menu button:hover {
   background: #eef8f4;
   color: #07875f;
+}
+
+.language-menu button.active-lang {
+  background: #eef8f4;
+  color: #087f5b;
+  font-weight: 600;
 }
 
 .rotate-icon {

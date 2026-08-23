@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   Beef,
   Target,
@@ -7,40 +8,42 @@ import {
 
 import "./Stats.css";
 
-const stats = [
-  {
-    icon: Beef,
-    number: "25+",
-    title: "Cattle Breeds",
-    subtitle: "Supported"
-  },
-  {
-    icon: Beef,
-    number: "15+",
-    title: "Buffalo Breeds",
-    subtitle: "Supported"
-  },
-  {
-    icon: Target,
-    number: "95%+",
-    title: "Accuracy",
-    subtitle: "of Prediction"
-  },
-  {
-    icon: Database,
-    number: "10K+",
-    title: "Images",
-    subtitle: "Trained"
-  },
-  {
-    icon: ShieldCheck,
-    number: "100%",
-    title: "Secure & Private",
-    subtitle: "Predictions"
-  }
-];
-
 function Stats() {
+  const { t } = useTranslation();
+
+  const stats = [
+    {
+      icon: Beef,
+      number: "25+",
+      title: t("stats.cattleTitle"),
+      subtitle: t("stats.supported")
+    },
+    {
+      icon: Beef,
+      number: "15+",
+      title: t("stats.buffaloTitle"),
+      subtitle: t("stats.supported")
+    },
+    {
+      icon: Target,
+      number: "95%+",
+      title: t("stats.accuracy"),
+      subtitle: t("stats.prediction")
+    },
+    {
+      icon: Database,
+      number: "10K+",
+      title: t("stats.images"),
+      subtitle: t("stats.trained")
+    },
+    {
+      icon: ShieldCheck,
+      number: "100%",
+      title: t("stats.secure"),
+      subtitle: t("stats.predictions")
+    }
+  ];
+
   return (
     <section className="stats">
 

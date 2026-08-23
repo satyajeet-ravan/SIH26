@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   MapPin,
   Info,
@@ -11,6 +12,8 @@ import girCow from "../assets/Gircow.png";
 import "./PredictionCard.css";
 
 function PredictionCard() {
+  const { t } = useTranslation();
+
   return (
     <div
       className="prediction-card"
@@ -23,14 +26,14 @@ function PredictionCard() {
       <div className="prediction-content">
 
         <p className="prediction-label">
-          Predicted Breed
+          {t("predictionCard.label")}
         </p>
 
         <div className="prediction-heading">
-          <h2>Gir Cow</h2>
+          <h2>{t("predictionCard.girCow")}</h2>
 
           <span>
-            92.4% Confidence
+            92.4% {t("predictionCard.confidence")}
           </span>
         </div>
 
@@ -38,32 +41,32 @@ function PredictionCard() {
 
           <Detail
             icon={CircleDot}
-            label="Species"
-            value="Cattle"
+            label={t("predictionCard.species")}
+            value={t("predictionCard.cattle")}
           />
 
           <Detail
             icon={MapPin}
-            label="Origin"
-            value="India (Gujarat)"
+            label={t("predictionCard.origin")}
+            value={t("predictionCard.indiaGujarat")}
           />
 
           <Detail
             icon={GlassWater}
-            label="Purpose"
-            value="Milk"
+            label={t("predictionCard.purpose")}
+            value={t("predictionCard.milk")}
           />
 
           <Detail
             icon={Info}
-            label="Characteristics"
-            value="Long ears, convex forehead, reddish coat, good milk yield"
+            label={t("predictionCard.characteristics")}
+            value={t("predictionCard.girCharacteristics")}
           />
 
         </div>
 
         <button className="details-button">
-          View Full Details
+          {t("predictionCard.viewDetails")}
           <ArrowRight size={15} />
         </button>
 

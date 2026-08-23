@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import {
   UploadCloud,
   Cpu,
@@ -8,40 +9,42 @@ import {
 
 import "./HowItWorks.css";
 
-const steps = [
-  {
-    icon: UploadCloud,
-    title: "1. Upload Image",
-    description: "Upload clear image of cattle or buffalo"
-  },
-  {
-    icon: Cpu,
-    title: "2. AI Analysis",
-    description: "Our AI model analyzes the features"
-  },
-  {
-    icon: Search,
-    title: "3. Breed Prediction",
-    description: "Best matching breed is predicted"
-  },
-  {
-    icon: FileText,
-    title: "4. View Details",
-    description: "Get detailed information about the breed"
-  }
-];
-
 function HowItWorks() {
+  const { t } = useTranslation();
+
+  const steps = [
+    {
+      icon: UploadCloud,
+      title: t("howItWorks.step1Title"),
+      description: t("howItWorks.step1Desc")
+    },
+    {
+      icon: Cpu,
+      title: t("howItWorks.step2Title"),
+      description: t("howItWorks.step2Desc")
+    },
+    {
+      icon: Search,
+      title: t("howItWorks.step3Title"),
+      description: t("howItWorks.step3Desc")
+    },
+    {
+      icon: FileText,
+      title: t("howItWorks.step4Title"),
+      description: t("howItWorks.step4Desc")
+    }
+  ];
+
   return (
     <section className="how-it-works" id="how-it-works">
 
       <div className="section-label">
         <span></span>
-        HOW IT WORKS
+        {t("howItWorks.label")}
       </div>
 
       <h2>
-        Simple Steps, Accurate Results
+        {t("howItWorks.title")}
       </h2>
 
       <div className="steps">

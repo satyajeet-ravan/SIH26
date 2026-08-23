@@ -1,8 +1,11 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./About.css";
 import aboutImage from "../assets/about.jpg";
 
 const About = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="about-section">
       <div className="about-container">
@@ -12,38 +15,30 @@ const About = () => {
 
           <div className="about-label">
             <span className="about-line"></span>
-            <span>ABOUT BREEDVISION</span>
+            <span>{t("about.label")}</span>
           </div>
 
           <h2>
-            Empowering Livestock
-            <br />
-            Recognition with AI
+            {t("about.title")}
           </h2>
 
           <p>
-            BreedVision is an AI-powered platform that helps you identify
-            cattle and buffalo breeds instantly from an image. Our advanced
-            model is trained on thousands of images to deliver accurate
-            predictions along with detailed information about each breed.
+            {t("about.p1")}
           </p>
 
           <p>
-            Whether you are a farmer, researcher, student, or livestock
-            enthusiast, BreedVision makes breed identification simple,
-            fast and accessible.
+            {t("about.p2")}
           </p>
 
         </div>
 
         {/* Right Image */}
         <div className="about-image-wrapper">
-            <img
-  src={aboutImage}
-  alt="Cattle and buffalo"
-  className="about-image"
-/>
-         
+          <img
+            src={aboutImage}
+            alt="Cattle and buffalo"
+            className="about-image"
+          />
         </div>
 
       </div>

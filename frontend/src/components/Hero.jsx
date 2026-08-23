@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Upload,
   Sparkles,
@@ -10,7 +11,7 @@ import heroImage from "../assets/Hero.JPG";
 import "./Hero.css";
 
 function Hero() {
-
+  const { t } = useTranslation();
   const [image, setImage] = useState(null);
 
   const handleUpload = (event) => {
@@ -26,12 +27,12 @@ function Hero() {
     ];
 
     if (!allowedTypes.includes(file.type)) {
-      alert("Please upload JPG, JPEG or PNG.");
+      alert(t("hero.errorType"));
       return;
     }
 
     if (file.size > 10 * 1024 * 1024) {
-      alert("Maximum image size is 10MB.");
+      alert(t("hero.errorSize"));
       return;
     }
 
@@ -56,19 +57,15 @@ function Hero() {
         </div>
 
         <h1>
-          AI-Powered Breed
-          <br />
-          Classification
+          {t("hero.title")}
         </h1>
 
         <h2>
-          of Cattle & Buffaloes
+          {t("hero.subtitle")}
         </h2>
 
         <p>
-          Upload an image of cattle or buffalo and let our
-          advanced AI model identify the breed instantly
-          with high accuracy.
+          {t("hero.description")}
         </p>
 
         <div className="hero-buttons">
@@ -77,7 +74,7 @@ function Hero() {
 
             <Upload size={18} />
 
-            Upload Image
+            {t("hero.uploadBtn")}
 
             <input
               type="file"
@@ -89,7 +86,7 @@ function Hero() {
           </label>
 
           <button className="explore-button">
-            Explore Breeds
+            {t("hero.exploreBtn")}
             <ArrowRight size={17} />
           </button>
 
@@ -101,18 +98,18 @@ function Hero() {
 
             <img
               src={image}
-              alt="Selected cattle"
+              alt={t("hero.selected")}
             />
 
             <div>
-              <strong>Image selected</strong>
+              <strong>{t("hero.selected")}</strong>
 
               <span>
-                Ready for breed analysis
+                {t("hero.ready")}
               </span>
 
               <button>
-                Analyze Breed
+                {t("hero.analyzeBtn")}
               </button>
             </div>
 
