@@ -1,0 +1,839 @@
+/* =========================================================
+   COW BREEDS PAGE
+========================================================= */
+
+.cow-page {
+  min-height: 100vh;
+  background: #f7faf8;
+  color: #17221e;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.cow-hero {
+  position: relative;
+
+  width: 100%;
+  height: 390px;
+
+  background-size: cover;
+  background-position: center;
+
+  overflow: hidden;
+}
+
+
+/* Dark green overlay */
+
+.cow-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 61, 44, 0.96) 0%,
+      rgba(0, 72, 52, 0.86) 38%,
+      rgba(0, 72, 52, 0.45) 65%,
+      rgba(0, 72, 52, 0.10) 100%
+    );
+}
+
+
+/* Hero content wrapper */
+
+.cow-hero-overlay {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+}
+
+
+.cow-hero-content {
+  width: min(1150px, 90%);
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding-bottom: 5px;
+}
+
+
+/* =========================================================
+   HERO LABEL
+========================================================= */
+
+.hero-label {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #64e2a9;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.hero-label span {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #64e2a9;
+
+  border-radius: 50%;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.cow-hero h1 {
+  margin: 15px 0 13px;
+
+  max-width: 600px;
+
+  color: white;
+
+  font-size: 48px;
+  font-weight: 750;
+
+  line-height: 1.08;
+}
+
+
+.cow-hero h1 span {
+  display: block;
+
+  color: #59dca2;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.cow-hero p {
+  max-width: 580px;
+
+  margin: 0;
+
+  color: #e5f0eb;
+
+  font-size: 15px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   HERO SEARCH
+========================================================= */
+
+.hero-search {
+  width: 420px;
+  max-width: 100%;
+
+  height: 52px;
+
+  margin-top: 25px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  background: white;
+
+  border-radius: 28px;
+
+  color: #56635e;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.16);
+}
+
+
+.hero-search svg {
+  flex-shrink: 0;
+
+  color: #26332e;
+}
+
+
+.hero-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  padding: 0 8px;
+
+  color: #222;
+
+  font-size: 14px;
+}
+
+
+.hero-search input::placeholder {
+  color: #929c98;
+}
+
+
+/* =========================================================
+   BROWSE SECTION
+========================================================= */
+
+.browse-section {
+  width: min(1150px, 90%);
+
+  margin: 0 auto;
+
+  padding: 32px 0 70px;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.browse-top {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+
+.browse-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.browse-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #e8f5ef;
+
+  border-radius: 50%;
+
+  font-size: 23px;
+}
+
+
+.browse-title h2 {
+  margin: 0;
+
+  color: #17221e;
+
+  font-size: 21px;
+
+  font-weight: 700;
+}
+
+
+.browse-title p {
+  margin: 4px 0 0;
+
+  color: #7b8782;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   FILTER BUTTONS
+========================================================= */
+
+.breed-filters {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 17px;
+}
+
+
+.filter-btn {
+  padding: 9px 18px;
+
+  border: 1px solid #dce6e1;
+
+  border-radius: 8px;
+
+  background: white;
+
+  color: #47534e;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+
+.filter-btn:hover {
+  border-color: #008f68;
+
+  color: #008f68;
+}
+
+
+.filter-btn.active {
+  background: #008f68;
+
+  border-color: #008f68;
+
+  color: white;
+}
+
+
+/* =========================================================
+   TOTAL BREEDS
+========================================================= */
+
+.breed-count-box {
+  min-width: 145px;
+
+  padding: 13px 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  background: #edf7f2;
+
+  border-radius: 10px;
+}
+
+
+.count-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dff1e8;
+
+  border-radius: 8px;
+
+  font-size: 20px;
+}
+
+
+.breed-count-box small {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #6d7974;
+
+  font-size: 10px;
+}
+
+
+.breed-count-box strong {
+  display: block;
+
+  color: #164d3d;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   BREED GRID
+========================================================= */
+
+.breed-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+
+  margin-top: 25px;
+}
+
+
+/* =========================================================
+   BREED CARD
+========================================================= */
+
+.breed-card {
+  min-width: 0;
+
+  background: white;
+
+  border: 1px solid #dfe8e4;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.breed-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #c7ded5;
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   BREED IMAGE
+========================================================= */
+
+.card-image {
+  position: relative;
+
+  width: 100%;
+
+  height: 205px;
+
+  overflow: hidden;
+
+  background: #edf3f0;
+}
+
+
+.card-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.35s ease;
+}
+
+
+.breed-card:hover .card-image img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   HEART BUTTON
+========================================================= */
+
+.heart-btn {
+  position: absolute;
+
+  top: 12px;
+  right: 12px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: #37443f;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.2s ease;
+}
+
+
+.heart-btn:hover {
+  transform: scale(1.06);
+
+  color: #008f68;
+}
+
+
+.heart-btn.liked {
+  color: #008f68;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content {
+  padding: 17px 18px 18px;
+}
+
+
+/* Breed name */
+
+.card-content h3 {
+  margin: 0;
+
+  color: #075d49;
+
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   ORIGIN
+========================================================= */
+
+.origin {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 6px;
+
+  color: #65726c;
+
+  font-size: 12px;
+}
+
+
+.origin svg {
+  color: #687771;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   BREED TYPE
+========================================================= */
+
+.type-badge {
+  display: inline-block;
+
+  margin-top: 11px;
+
+  padding: 6px 10px;
+
+  background: #e4f3ec;
+
+  border-radius: 6px;
+
+  color: #087354;
+
+  font-size: 10px;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.card-content p {
+  min-height: 55px;
+
+  margin: 12px 0 17px;
+
+  color: #5d6964;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+========================================================= */
+
+.view-details {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #00866a;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: gap 0.2s ease;
+}
+
+
+.view-details:hover {
+  gap: 9px;
+}
+
+
+.view-details svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+  padding: 70px 20px;
+
+  text-align: center;
+}
+
+
+.no-results-icon {
+  font-size: 45px;
+
+  margin-bottom: 10px;
+}
+
+
+.no-results h3 {
+  margin: 0;
+
+  color: #26332e;
+
+  font-size: 20px;
+}
+
+
+.no-results p {
+  margin-top: 6px;
+
+  color: #7b8782;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .browse-section {
+    width: 92%;
+  }
+
+
+  .breed-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .cow-hero {
+    height: 440px;
+
+    background-position: 65% center;
+  }
+
+
+  .cow-hero::before {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 61, 44, 0.96),
+        rgba(0, 72, 52, 0.72)
+      );
+  }
+
+
+  .cow-hero-content {
+    width: 88%;
+  }
+
+
+  .cow-hero h1 {
+    font-size: 37px;
+  }
+
+
+  .cow-hero p {
+    font-size: 13px;
+
+    max-width: 500px;
+  }
+
+
+  .hero-search {
+    width: 100%;
+  }
+
+
+  .browse-section {
+    width: 90%;
+
+    padding-top: 27px;
+  }
+
+
+  .browse-top {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+
+  .breed-count-box {
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .breed-grid {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .card-image {
+    height: 230px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .cow-hero {
+    height: 460px;
+  }
+
+
+  .cow-hero h1 {
+    font-size: 32px;
+  }
+
+
+  .hero-label {
+    font-size: 11px;
+  }
+
+
+  .browse-title h2 {
+    font-size: 19px;
+  }
+
+
+  .breed-filters {
+    gap: 7px;
+  }
+
+
+  .filter-btn {
+    padding: 8px 12px;
+
+    font-size: 11px;
+  }
+
+
+  .card-image {
+    height: 210px;
+  }
+
+}
+.cow-hero {
+  position: relative;
+  width: 100%;
+  height: 390px;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* Move the important buffalo subjects into view */
+  background-position: center center;
+
+  overflow: hidden;
+}
